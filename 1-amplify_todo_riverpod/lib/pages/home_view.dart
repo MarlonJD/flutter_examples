@@ -64,7 +64,8 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ),
                                 subtitle: Text(
-                                    todoState.allTodos[index]!.description!),
+                                  todoState.allTodos[index]!.description!,
+                                ),
                                 trailing: SizedBox(
                                   width:
                                       (todoState.allTodos[index]!.isCompleted ??
@@ -91,7 +92,8 @@ class HomePage extends StatelessWidget {
                                             );
                                           } else {
                                             todoNotifier.updateTodo(
-                                                todoState.allTodos[index]!);
+                                              todoState.allTodos[index]!,
+                                            );
                                           }
                                         },
                                       ),
@@ -102,7 +104,8 @@ class HomePage extends StatelessWidget {
                                           icon: const Icon(Icons.delete),
                                           onPressed: () {
                                             todoNotifier.removeTodo(
-                                                todoState.allTodos[index]!.id);
+                                              todoState.allTodos[index]!.id,
+                                            );
                                           },
                                         ),
                                     ],

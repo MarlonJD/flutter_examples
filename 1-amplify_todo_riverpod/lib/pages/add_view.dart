@@ -1,6 +1,3 @@
-import "package:amplify_api/amplify_api.dart";
-import "package:amplify_flutter/amplify_flutter.dart";
-import "package:amplify_todo_riverpod/models/ModelProvider.dart";
 import "package:amplify_todo_riverpod/pages/controller/snackbar_controller.dart";
 import "package:amplify_todo_riverpod/pages/controller/todo_controller.dart";
 import "package:flutter/material.dart";
@@ -76,7 +73,7 @@ class AddPage extends StatelessWidget {
                           ref.read(todoNotifierProvider.notifier);
                       return FilledButton(
                         onPressed: () async {
-                          todoNotifier.createTodo();
+                          await todoNotifier.createTodo();
                           context.pop();
                         },
                         child: const Text("Kaydet"),

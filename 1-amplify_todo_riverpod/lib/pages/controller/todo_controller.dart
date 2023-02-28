@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:amplify_api/amplify_api.dart';
-import 'package:amplify_flutter/amplify_flutter.dart';
-import 'package:amplify_todo_riverpod/models/ModelProvider.dart';
-import 'package:amplify_todo_riverpod/pages/controller/snackbar_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import "package:amplify_api/amplify_api.dart";
+import "package:amplify_flutter/amplify_flutter.dart";
+import "package:amplify_todo_riverpod/models/ModelProvider.dart";
+import "package:amplify_todo_riverpod/pages/controller/snackbar_controller.dart";
+import "package:flutter/material.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
 
 enum Status { loading, success, fail }
 
@@ -24,7 +24,7 @@ class TodoState {
 
   @override
   String toString() {
-    return 'TodoState(allTodos: $allTodos, status: $status, error: $error, nameController: $nameController, descriptionController: $descriptionController)';
+    return "TodoState(allTodos: $allTodos, status: $status, error: $error, nameController: $nameController, descriptionController: $descriptionController)";
   }
 
   TodoState copyWith({
@@ -52,11 +52,13 @@ final todoNotifierProvider =
 
 class TodoNotifier extends StateNotifier<TodoState> {
   TodoNotifier(this._snackbarController)
-      : super(TodoState(
-          allTodos: [],
-          nameController: TextEditingController(),
-          descriptionController: TextEditingController(),
-        )) {
+      : super(
+          TodoState(
+            allTodos: [],
+            nameController: TextEditingController(),
+            descriptionController: TextEditingController(),
+          ),
+        ) {
     debugPrint("TodoNotifier initialized");
     getTodos();
   }
