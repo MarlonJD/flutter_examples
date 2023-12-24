@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "amplify_todo_riverpod",
+      "request": "launch",
+      "type": "dart",
+      "program": "amplify_todo_riverpod/lib/main.dart"
+    },
+    {
+        "name": "amplify_todo_wo_riverpod",
+        "request": "launch",
+        "type": "dart",
+        "program": "amplify-todo-wo-riverpod/lib/main.dart"
+      }
+  ]
+}

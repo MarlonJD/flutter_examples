@@ -5,7 +5,6 @@ import "package:demo_amplify/models/ModelProvider.dart";
 import "package:demo_amplify/routes/route.dart";
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
-import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:go_router/go_router.dart";
 
 class MyApp extends StatefulWidget {
@@ -49,21 +48,17 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(
-      builder: (context, ref, _) {
-        return MaterialApp.router(
-          routeInformationParser: router.routeInformationParser,
-          routeInformationProvider: router.routeInformationProvider,
-          routerDelegate: router.routerDelegate,
-          restorationScopeId: "app",
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            useMaterial3: true,
-            colorSchemeSeed: const Color(0xFF00ff00),
-            brightness: Brightness.light,
-          ),
-        );
-      },
+    return MaterialApp.router(
+      routeInformationParser: router.routeInformationParser,
+      routeInformationProvider: router.routeInformationProvider,
+      routerDelegate: router.routerDelegate,
+      restorationScopeId: "app",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: const Color(0xFF00ff00),
+        brightness: Brightness.light,
+      ),
     );
   }
 

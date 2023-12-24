@@ -88,7 +88,10 @@ class TodoNotifier extends StateNotifier<TodoState> {
   }
 
   Future<void> removeTodo(String todoId) async {
-    final todoRemoveRequest = ModelMutations.deleteById(Todo.classType, todoId);
+    final todoRemoveRequest = ModelMutations.deleteById(
+      Todo.classType,
+      TodoModelIdentifier(id: todoId),
+    );
     final todoRemoveResponse =
         await Amplify.API.mutate(request: todoRemoveRequest).response;
 
@@ -137,7 +140,7 @@ class TodoNotifier extends StateNotifier<TodoState> {
         await Amplify.API.mutate(request: todoRequest).response;
 
     if (todoResponse.hasErrors) {
-      debugPrint("Error: ${todoResponse.errors.toString()}");
+      debugPrint("Error: ${todoResponse.errors}");
       _snackbarController.setSnackbarMessage("Bir hata oluştu");
     } else {
       _snackbarController

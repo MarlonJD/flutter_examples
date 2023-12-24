@@ -67,11 +67,7 @@ class HomePage extends StatelessWidget {
                                   todoState.allTodos[index]!.description!,
                                 ),
                                 trailing: SizedBox(
-                                  width:
-                                      (todoState.allTodos[index]!.isCompleted ??
-                                              true)
-                                          ? 96
-                                          : 48,
+                                  width: 96,
                                   child: Row(
                                     children: [
                                       IconButton(
@@ -97,17 +93,14 @@ class HomePage extends StatelessWidget {
                                           }
                                         },
                                       ),
-                                      if (todoState
-                                              .allTodos[index]!.isCompleted ??
-                                          true)
-                                        IconButton(
-                                          icon: const Icon(Icons.delete),
-                                          onPressed: () {
-                                            todoNotifier.removeTodo(
-                                              todoState.allTodos[index]!.id,
-                                            );
-                                          },
-                                        ),
+                                      IconButton(
+                                        icon: const Icon(Icons.delete),
+                                        onPressed: () {
+                                          todoNotifier.removeTodo(
+                                            todoState.allTodos[index]!.id,
+                                          );
+                                        },
+                                      ),
                                     ],
                                   ),
                                 ),

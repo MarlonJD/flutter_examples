@@ -39,7 +39,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> removeTodo(String todoId) async {
-    final todoRemoveRequest = ModelMutations.deleteById(Todo.classType, todoId);
+    final todoRemoveRequest = ModelMutations.deleteById(
+      Todo.classType,
+      TodoModelIdentifier(id: todoId),
+    );
     final todoRemoveResponse =
         await Amplify.API.mutate(request: todoRemoveRequest).response;
 

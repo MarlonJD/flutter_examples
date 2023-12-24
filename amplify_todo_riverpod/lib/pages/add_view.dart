@@ -13,8 +13,8 @@ class AddPage extends StatelessWidget {
       body: CustomScrollView(
         primary: false,
         slivers: <Widget>[
-          SliverAppBar.medium(
-            title: const Text(
+          const SliverAppBar.medium(
+            title: Text(
               "Add",
             ),
           ),
